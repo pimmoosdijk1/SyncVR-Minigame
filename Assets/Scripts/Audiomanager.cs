@@ -23,7 +23,7 @@ public class Audiomanager : MonoBehaviour
         }
 
        
-        DontDestroyOnLoad(transform.gameObject);
+        DontDestroyOnLoad(transform.gameObject); //keep gameobj inbetween scenes
     }
 
     

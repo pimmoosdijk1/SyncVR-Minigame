@@ -4,8 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 
-public class DetectCollisions : MonoBehaviour
-{
+public class DetectCollisions : MonoBehaviour{
     
 
 
@@ -14,12 +13,9 @@ public class DetectCollisions : MonoBehaviour
     public void OnTriggerEnter(Collider other)
     {
         //Deactivate the food and destroy the animal
-        other.gameObject.SetActive(false);
-        Destroy(gameObject);
-        Score.score++;
-
-        //foodAudio.EatSound();
-
+        other.gameObject.SetActive(false); //deactive projectile (pooled)
+        Destroy(gameObject);    //Destroy other gameobject (animals)
+        Score.score++; //to score in score script +1
     }
 
 

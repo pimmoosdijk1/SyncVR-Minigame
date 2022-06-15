@@ -4,43 +4,23 @@ using UnityEngine;
 
 public class DestroyOutOfBounds : MonoBehaviour
 {
-    private float topBound = 30;
-    private float lowerBound = 2;
-
-    private int hungryAnimals = 0;
-
-    //public int maxHealth = 4;
-    //public int currentHealth;
-
-    //public Healthbar healthBar;
-
-    //private void Start()
-    //{
-    //    currentHealth = maxHealth;
-    //    healthBar.SetMaxHealth(maxHealth);
-    //}
-
+    private float topBound = 30; // border for projectile deactivation
+    private float lowerBound = 2; //border for animal destroying
 
     void Update()
     {
         if (transform.position.z > topBound)
         {
-            // Deactivate object when it leaves the scree, for projectiles
+            // Deactivate object when it leaves the screen, for projectiles
             gameObject.SetActive(false); // dont destroy because its pooled
 
         }
-        else if (transform.position.z < lowerBound)
+        else if (transform.position.z < lowerBound) // if animals leaves screen:
         {
-            Score.hungryAnimals++;
-            //healthBar.SetHealth(currentHealth);
+            Score.hungryAnimals++; //tell score script to add to hungry animals, decrease 'health'
 
-
-            //Debug.Log("Hungry animals" + hungryAnimals);
-            Destroy(gameObject);
-            
-        }
-
-        
+            Destroy(gameObject); //destroy gameobject            
+        }       
 
     }
 }

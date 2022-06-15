@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     
     void Update()
     {
-        // Check for left and right bounds
+        // Check if player moves inside of bounds
         if (transform.position.x < -xRange)
         {
             transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
@@ -30,15 +30,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // No longer necessary to Instantiate prefabs
-            // Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
-
             // Get an object object from the pool
             GameObject pooledProjectile = ObjectPooler.SharedInstance.GetPooledObject(); // get bullet from pool and store in gameobject
             if (pooledProjectile != null) //is there an availible bullet
             {
-                pooledProjectile.SetActive(true); // activate it
-                pooledProjectile.transform.position = transform.position; // position it at player
+                pooledProjectile.SetActive(true); // activate projectile from pool
+                pooledProjectile.transform.position = transform.position; // position projectile at player
             }
         }
     }

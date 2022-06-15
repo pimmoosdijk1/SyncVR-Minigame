@@ -10,27 +10,18 @@ public class Healthbar : MonoBehaviour
     public Gradient gradient;
     public Image fill;
 
-    public void SetMaxHealth(int health)
+    public void SetMaxHealth(int health) 
     {
         slider.maxValue = health;
         slider.value = health;
 
         fill.color = gradient.Evaluate(1f);
-
     }
 
-    public void SetHealth(int health)
-    {
-
-        
-        slider.value = health;
+    public void SetHealth(int health) //message from score script, pass in  and subtract from health
+    {        
+        slider.value = health; //shorten healthbar
 
         fill.color = gradient.Evaluate(slider.normalizedValue);
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    }    
 }
