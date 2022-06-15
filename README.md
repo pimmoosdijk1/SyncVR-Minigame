@@ -14,7 +14,9 @@ There's an increasing difficulty which means that the animals spawn faster every
 
 CONTROLS:
 Use A-D keys or left and right arrows to move
+
 Use Spacebar to throw food
+
 Press Escape while playing to pause the game
 
 OBJECTIVE:
